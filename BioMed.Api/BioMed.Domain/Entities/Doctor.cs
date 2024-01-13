@@ -8,7 +8,7 @@
         public decimal PricePerVisit { get; set; }
 
         public int SpesializationId { get; set; }
-        public Spesialization Spesialization { get; set; }
+        public Spesialization? Spesialization { get; set; }
 
         public virtual ICollection<Visit>? Visits { get; set; }
     }

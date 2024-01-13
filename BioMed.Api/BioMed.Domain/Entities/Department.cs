@@ -4,6 +4,6 @@
     {
         public string? Name { get; set; }
 
-        public virtual ICollection<Spesialization> Spesializations { get;}
+        public virtual ICollection<Spesialization>? Spesializations { get;}
     }
 }
