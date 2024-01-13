@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioMed.Api", "BioMed.Api\BioMed.Api.csproj", "{2232E7AC-4261-4912-843F-5578B46C4E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioMed.Api", "BioMed.Api\BioMed.Api.csproj", "{2232E7AC-4261-4912-843F-5578B46C4E0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioMed.Domain", "BioMed.Domain\BioMed.Domain.csproj", "{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2232E7AC-4261-4912-843F-5578B46C4E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2232E7AC-4261-4912-843F-5578B46C4E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2232E7AC-4261-4912-843F-5578B46C4E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
