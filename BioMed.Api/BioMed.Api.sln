@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioMed.Api", "BioMed.Api\BioMed.Api.csproj", "{2232E7AC-4261-4912-843F-5578B46C4E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BioMed.Domain", "BioMed.Domain\BioMed.Domain.csproj", "{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioMed.Domain", "BioMed.Domain\BioMed.Domain.csproj", "{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
