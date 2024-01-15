@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioMed.Api", "BioMed.Api\BioMed.Api.csproj", "{2232E7AC-4261-4912-843F-5578B46C4E0B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BioMed.Domain", "BioMed.Domain\BioMed.Domain.csproj", "{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,10 +21,6 @@ Global
 		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7461B0F1-2DAB-455F-9221-2F8FFC3D88A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9A04028-DC65-4D34-A7F7-0798C2527523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9A04028-DC65-4D34-A7F7-0798C2527523}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9A04028-DC65-4D34-A7F7-0798C2527523}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9A04028-DC65-4D34-A7F7-0798C2527523}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
