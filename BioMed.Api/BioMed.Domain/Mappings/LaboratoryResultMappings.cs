@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
-using BioMed.Domain.DTOs.LabResult;
+using BioMed.Domain.DTOs.LaboratoryResult;
 using BioMed.Domain.Entities;
 
 namespace BioMed.Domain.Mappings
 {
-    internal class LabResultMappings : Profile
+    internal class LaboratoryResultMappings : Profile
     {
-        public LabResultMappings() 
+        public LaboratoryResultMappings() 
         {
-            CreateMap<LabResult, LabResultDTO>();
-            CreateMap<LabResultDTO, LabResult>();
-            CreateMap<LabResultForCreateDTO, LabResult>();
-            CreateMap<LabResultForUpdateDTO, LabResult>();
+            CreateMap<LaboratoryResult, LaboratoryResultDTO>();
+            CreateMap<LaboratoryResultDTO, LaboratoryResult>();
+            CreateMap<LaboratoryResultForCreateDTO, LaboratoryResult>();
+            CreateMap<LaboratoryResultForUpdateDTO, LaboratoryResult>();
         }
     }
 }

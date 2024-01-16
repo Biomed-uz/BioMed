@@ -1,6 +1,6 @@
 ﻿namespace BioMed.Domain.DTOs.Department
 {
-    public record DepartmentForupdateDTO(
+    public record DepartmentForUpdateDTO(
         int Id,
         string Name);
 }

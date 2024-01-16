@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
-using BioMed.Domain.DTOs.TestType;
+using BioMed.Domain.DTOs.AnalysisType;
 using BioMed.Domain.Entities;
 
 namespace BioMed.Domain.Mappings
 {
-    internal class TestTypeMappings : Profile
+    internal class AnalysisTypeMappings : Profile
     {
-        public TestTypeMappings() 
+        public AnalysisTypeMappings() 
         {
-            CreateMap<TestType, TestTypeDTO>();
-            CreateMap<TestTypeDTO, TestType>();
-            CreateMap<TestTypeForCreateDTO, TestType>();
-            CreateMap<TestTypeForUpdateDTO, TestType>();
+            CreateMap<AnalysisType, AnalysisTypeDTO>();
+            CreateMap<AnalysisTypeDTO, AnalysisType>();
+            CreateMap<AnalysisTypeForCreateDTO, AnalysisType>();
+            CreateMap<AnalysisTypeForUpdateDTO, AnalysisType>();
         }
     }
 }
