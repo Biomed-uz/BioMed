@@ -6,7 +6,7 @@
         public IDepartmentRepository Department { get; }
         public IDoctorRepository Doctor { get; }
         public IPatientRepository Patient { get; }
-        public IVisitRepostory Visit {  get; }
+        public IVisitRepository Visit {  get; }
         public IPaymentRepository Payment { get; }
         public IAnalysisTypeRepository AnalysisType { get; }
         public ILaboratoryResultRepository LaboratoryResult { get; }
