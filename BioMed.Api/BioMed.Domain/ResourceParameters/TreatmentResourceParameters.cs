@@ -6,7 +6,5 @@
         public int LaboratoryResultId { get; set; }
         public int DiseaseId { get; set; }
         public override string OrderBy { get; set; } = "prescription";
-
-        protected override int MaxPageSize { get; set; } = 50;
     }
 }

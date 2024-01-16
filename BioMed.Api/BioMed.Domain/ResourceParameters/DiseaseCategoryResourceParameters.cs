@@ -4,6 +4,6 @@
     {
         public override string OrderBy { get; set; } = "name";
 
-        protected override int MaxPageSize { get; set; } = 50;
+        protected override int MaxPageSize { get; set; } = 15;
     }
 }
