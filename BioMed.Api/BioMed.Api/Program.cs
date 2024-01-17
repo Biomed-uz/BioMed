@@ -1,4 +1,6 @@
 
+using BioMed.Api.Extensions;
+
 namespace BioMed.Api
 {
     public class Program
@@ -9,10 +11,15 @@ namespace BioMed.Api
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddNewtonsoftJson()
+                .AddXmlSerializerFormatters();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureDatabaseContext();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 
