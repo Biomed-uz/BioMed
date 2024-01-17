@@ -11,7 +11,7 @@ namespace BioMed.Infrastructure.Persistence.Repositories
 
         public RepositoryBase(BioMedDbContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public T Create(T entity)
