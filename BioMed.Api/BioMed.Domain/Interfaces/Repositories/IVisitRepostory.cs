@@ -2,7 +2,7 @@
 
 namespace BioMed.Domain.Interfaces.Repositories
 {
-    public interface IVisitRepostory : IRepositoryBase<Visit>
+    public interface IVisitRepository : IRepositoryBase<Visit>
     {
     }
 }
