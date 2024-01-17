@@ -1,4 +1,6 @@
 
+using BioMed.Api.Middlewares;
+
 namespace BioMed.Api
 {
     public class Program
@@ -22,6 +24,8 @@ namespace BioMed.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 
