@@ -1,4 +1,4 @@
-
+using BioMed.Api.Middlewares;
 using BioMed.Api.Extensions;
 
 namespace BioMed.Api
@@ -29,6 +29,8 @@ namespace BioMed.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 
