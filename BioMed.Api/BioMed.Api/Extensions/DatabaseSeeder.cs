@@ -24,6 +24,7 @@ namespace BioMed.Api.Extensions
             CreateLaboratoryResults(context);
             CreateDiseaseCategories(context);
             CreateDiseases(context);
+            CreateTreatments(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -716,6 +717,35 @@ namespace BioMed.Api.Extensions
                 new Disease() { Name = "Black Lung Disease", DiseaseCategoryId = 20 },
             };
             context.Diseases.AddRange(diseases);
+            context.SaveChanges();
+        }
+
+        public static void CreateTreatments(BioMedDbContext context)
+        {
+            if (context.Treatments.Any()) return;
+
+            var laboratoryResults = context.LaboratoryResults.ToList();
+            var diseases = context.Diseases.ToList();
+            var visits = context.Visits.ToList();
+
+            var treatments = new List<Treatment>();
+
+            for (int i = 0; i < 200000; i++)
+            {
+                var randomLabResult = _faker.PickRandom(laboratoryResults);
+                var randomDisease = _faker.PickRandom(diseases);
+                var randomVisit = _faker.PickRandom(visits);
+
+                treatments.Add(new Treatment()
+                {
+                    Prescription = _faker.Lorem.Sentence(),
+                    DiseaseId = randomDisease.Id,
+                    VisitId = randomVisit.Id,
+                    LaboratoryResultId = randomLabResult.Id,
+                });
+            }
+
+            context.Treatments.AddRange(treatments);
             context.SaveChanges();
         }
     }
