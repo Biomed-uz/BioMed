@@ -21,6 +21,7 @@ namespace BioMed.Api.Extensions
             CreateVisits(context);
             CreatePayments(context);
             CreateAnalysisTypes(context);
+            CreateLaboratoryResults(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -562,6 +563,33 @@ namespace BioMed.Api.Extensions
             };
 
             context.AnalysisTypes.AddRange(analysisTypes);
+            context.SaveChanges();
+        }
+
+        public static void CreateLaboratoryResults(BioMedDbContext context)
+        {
+            if (context.LaboratoryResults.Any()) return;
+
+            var analysisTypes = context.AnalysisTypes.ToList();
+
+            var laboratoryResult = new List<LaboratoryResult>();
+
+            foreach (var analysisType in analysisTypes)
+            {
+                var labResultCount = _faker.Random.Int(20_000, 40_000);
+
+                for (int i = 0; i < labResultCount; i++)
+                {
+                    laboratoryResult.Add(new LaboratoryResult()
+                    {
+                        Result = _faker.Lorem.Sentence(),
+                        Date = _faker.Date.Between(DateTime.Now.AddYears(-2), DateTime.Now),
+                        AnalysisTypeId = analysisType.Id,
+                    });
+                }
+            }
+
+            context.LaboratoryResults.AddRange(laboratoryResult);
             context.SaveChanges();
         }
     }
