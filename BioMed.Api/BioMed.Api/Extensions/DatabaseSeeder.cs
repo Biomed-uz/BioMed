@@ -23,6 +23,7 @@ namespace BioMed.Api.Extensions
             CreateAnalysisTypes(context);
             CreateLaboratoryResults(context);
             CreateDiseaseCategories(context);
+            CreateDiseases(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -623,6 +624,98 @@ namespace BioMed.Api.Extensions
             };
 
             context.DiseaseCategories.AddRange(diseaseCategories);
+            context.SaveChanges();
+        }
+
+        private static void CreateDiseases(BioMedDbContext context)
+        {
+            if (context.Diseases.Any()) return;
+
+            var diseases = new List<Disease>
+            {
+                new Disease() { Name = "Influenza", DiseaseCategoryId = 1 },
+                new Disease() { Name = "Tuberculosis", DiseaseCategoryId = 1 },
+                new Disease() { Name = "HIV/AIDS", DiseaseCategoryId = 1 },
+                new Disease() { Name = "Malaria", DiseaseCategoryId = 1 },
+                new Disease() { Name = "COVID-19", DiseaseCategoryId = 1 },
+                new Disease() { Name = "Coronary Artery Disease", DiseaseCategoryId = 2 },
+                new Disease() { Name = "Hypertension", DiseaseCategoryId = 2 },
+                new Disease() { Name = "Heart Failure", DiseaseCategoryId = 2 },
+                new Disease() { Name = "Stroke", DiseaseCategoryId = 2 },
+                new Disease() { Name = "Asthma", DiseaseCategoryId = 3 },
+                new Disease() { Name = "Chronic Obstructive Pulmonary Disease (COPD)", DiseaseCategoryId = 3 },
+                new Disease() { Name = "Pneumonia", DiseaseCategoryId = 3 },
+                new Disease() { Name = "Lung Cancer", DiseaseCategoryId = 3 },
+                new Disease() { Name = "Alzheimer's Disease", DiseaseCategoryId = 4 },
+                new Disease() { Name = "Parkinson's Disease", DiseaseCategoryId = 4 },
+                new Disease() { Name = "Epilepsy", DiseaseCategoryId = 4 },
+                new Disease() { Name = "Multiple Sclerosis", DiseaseCategoryId = 4 },
+                new Disease() { Name = "Gastroenteritis", DiseaseCategoryId = 5 },
+                new Disease() { Name = "Inflammatory Bowel Disease (IBD)", DiseaseCategoryId = 5 },
+                new Disease() { Name = "Peptic Ulcer Disease", DiseaseCategoryId = 5 },
+                new Disease() { Name = "Liver Cirrhosis", DiseaseCategoryId = 5 },
+                new Disease() { Name = "Diabetes Mellitus", DiseaseCategoryId = 6 },
+                new Disease() { Name = "Thyroid Disorders", DiseaseCategoryId = 6 },
+                new Disease() { Name = "Addison's Disease", DiseaseCategoryId = 6 },
+                new Disease() { Name = "Cushing's Syndrome", DiseaseCategoryId = 6 },
+                new Disease() { Name = "Osteoarthritis", DiseaseCategoryId = 7 },
+                new Disease() { Name = "Rheumatoid Arthritis", DiseaseCategoryId = 7 },
+                new Disease() { Name = "Osteoporosis", DiseaseCategoryId = 7 },
+                new Disease() { Name = "Muscular Dystrophy", DiseaseCategoryId = 7 },
+                new Disease() { Name = "Anemia", DiseaseCategoryId = 8 },
+                new Disease() { Name = "Hemophilia", DiseaseCategoryId = 8 },
+                new Disease() { Name = "Leukemia", DiseaseCategoryId = 8 },
+                new Disease() { Name = "Thrombocytopenia", DiseaseCategoryId = 8 },
+                new Disease() { Name = "Breast Cancer", DiseaseCategoryId = 9 },
+                new Disease() { Name = "Lung Cancer", DiseaseCategoryId = 9 },
+                new Disease() { Name = "Colorectal Cancer", DiseaseCategoryId = 9 },
+                new Disease() { Name = "Prostate Cancer", DiseaseCategoryId = 9 },
+                new Disease() { Name = "Down Syndrome", DiseaseCategoryId = 10 },
+                new Disease() { Name = "Cystic Fibrosis", DiseaseCategoryId = 10 },
+                new Disease() { Name = "Huntington's Disease", DiseaseCategoryId = 10 },
+                new Disease() { Name = "Sickle Cell Anemia", DiseaseCategoryId = 10 },
+                new Disease() { Name = "Depression", DiseaseCategoryId = 11 },
+                new Disease() { Name = "Anxiety Disorders", DiseaseCategoryId = 11 },
+                new Disease() { Name = "Schizophrenia", DiseaseCategoryId = 11 },
+                new Disease() { Name = "Bipolar Disorder", DiseaseCategoryId = 11 },
+                new Disease() { Name = "Rheumatoid Arthritis", DiseaseCategoryId = 12 },
+                new Disease() { Name = "Lupus", DiseaseCategoryId = 12 },
+                new Disease() { Name = "Type 1 Diabetes", DiseaseCategoryId = 12 },
+                new Disease() { Name = "Multiple Sclerosis", DiseaseCategoryId = 12 },
+                new Disease() { Name = "Chronic Kidney Disease", DiseaseCategoryId = 13 },
+                new Disease() { Name = "Nephrotic Syndrome", DiseaseCategoryId = 13 },
+                new Disease() { Name = "Renal Failure", DiseaseCategoryId = 13 },
+                new Disease() { Name = "Kidney Stones", DiseaseCategoryId = 13 },
+                new Disease() { Name = "Psoriasis", DiseaseCategoryId = 14 },
+                new Disease() { Name = "Eczema", DiseaseCategoryId = 14 },
+                new Disease() { Name = "Acne", DiseaseCategoryId = 14 },
+                new Disease() { Name = "Dermatitis", DiseaseCategoryId = 14 },
+                new Disease() { Name = "Polycystic Ovary Syndrome (PCOS)", DiseaseCategoryId = 15 },
+                new Disease() { Name = "Endometriosis", DiseaseCategoryId = 15 },
+                new Disease() { Name = "Infertility", DiseaseCategoryId = 15 },
+                new Disease() { Name = "Erectile Dysfunction", DiseaseCategoryId = 15 },
+                new Disease() { Name = "Allergic Rhinitis", DiseaseCategoryId = 16 },
+                new Disease() { Name = "Asthma", DiseaseCategoryId = 16 },
+                new Disease() { Name = "Atopic Dermatitis", DiseaseCategoryId = 16 },
+                new Disease() { Name = "Food Allergies", DiseaseCategoryId = 16 },
+                new Disease() { Name = "Tooth Decay", DiseaseCategoryId = 17 },
+                new Disease() { Name = "Gum Disease", DiseaseCategoryId = 17 },
+                new Disease() { Name = "Oral Cancer", DiseaseCategoryId = 17 },
+                new Disease() { Name = "Temporomandibular Joint (TMJ) Disorders", DiseaseCategoryId = 17 },
+                new Disease() { Name = "Malaria", DiseaseCategoryId = 18 },
+                new Disease() { Name = "Zika Virus", DiseaseCategoryId = 18 },
+                new Disease() { Name = "Dengue Fever", DiseaseCategoryId = 18 },
+                new Disease() { Name = "Lyme Disease", DiseaseCategoryId = 18 },
+                new Disease() { Name = "Amyotrophic Lateral Sclerosis (ALS)", DiseaseCategoryId = 19 },
+                new Disease() { Name = "Huntington's Disease", DiseaseCategoryId = 19 },
+                new Disease() { Name = "Pompe Disease", DiseaseCategoryId = 19 },
+                new Disease() { Name = "Fabry Disease", DiseaseCategoryId = 19 },
+                new Disease() { Name = "Asbestosis", DiseaseCategoryId = 20 },
+                new Disease() { Name = "Silicosis", DiseaseCategoryId = 20 },
+                new Disease() { Name = "Lead Poisoning", DiseaseCategoryId = 20 },
+                new Disease() { Name = "Black Lung Disease", DiseaseCategoryId = 20 },
+            };
+            context.Diseases.AddRange(diseases);
             context.SaveChanges();
         }
     }
