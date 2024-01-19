@@ -19,6 +19,7 @@ namespace BioMed.Api.Extensions
             CreateDoctors(context);
             CreatePatients(context);
             CreateVisits(context);
+            CreatePayments(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -497,6 +498,28 @@ namespace BioMed.Api.Extensions
             }
 
             context.Visits.AddRange(visits);
+            context.SaveChanges();
+        }
+
+        public static void CreatePayments(BioMedDbContext context)
+        {
+            if (context.Payments.Any()) return;
+
+            var visits = context.Visits.ToList();
+
+            var payments = new List<Payment>();
+
+            foreach (var visit in visits)
+            {
+                payments.Add(new Payment()
+                {
+                    Amount = visit.TotalPrice + (visit.TotalPrice * (decimal)0.025),
+                    Date = _faker.Date.Between(DateTime.Now.AddYears(-2), DateTime.Now),
+                    VisitId = visit.Id,
+                });
+            }
+
+            context.Payments.AddRange(payments);
             context.SaveChanges();
         }
     }
