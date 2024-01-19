@@ -20,6 +20,7 @@ namespace BioMed.Api.Extensions
             CreatePatients(context);
             CreateVisits(context);
             CreatePayments(context);
+            CreateAnalysisTypes(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -520,6 +521,47 @@ namespace BioMed.Api.Extensions
             }
 
             context.Payments.AddRange(payments);
+            context.SaveChanges();
+        }
+
+        public static void CreateAnalysisTypes(BioMedDbContext context)
+        {
+            if (context.AnalysisTypes.Any()) return;
+
+            var analysisTypes = new List<AnalysisType>
+            {
+                new AnalysisType() { Name = "Complete Blood Count (CBC)" },
+                new AnalysisType() { Name = "Blood Chemistry Panel" },
+                new AnalysisType() { Name = "Blood Type and Rh Factor" },
+                new AnalysisType() { Name = "Coagulation Panel (Clotting Factors)" },
+                new AnalysisType() { Name = "Lipid Panel (Cholesterol Levels)" },
+                new AnalysisType() { Name = "Blood Glucose (Blood Sugar)" },
+                new AnalysisType() { Name = "Routine Urinalysis" },
+                new AnalysisType() { Name = "Microscopic Examination of Urine" },
+                new AnalysisType() { Name = "X-rays" },
+                new AnalysisType() { Name = "Computed Tomography (CT) Scan" },
+                new AnalysisType() { Name = "Magnetic Resonance Imaging (MRI)" },
+                new AnalysisType() { Name = "Ultrasound" },
+                new AnalysisType() { Name = "Positron Emission Tomography (PET) Scan" },
+                new AnalysisType() { Name = "Mammography" },
+                new AnalysisType() { Name = "Electrocardiogram (ECG or EKG)" },
+                new AnalysisType() { Name = "Electroencephalogram (EEG)" },
+                new AnalysisType() { Name = "Upper Gastrointestinal Endoscopy" },
+                new AnalysisType() { Name = "Colonoscopy" },
+                new AnalysisType() { Name = "Bronchoscopy" },
+                new AnalysisType() { Name = "Biopsy" },
+                new AnalysisType() { Name = "Pap Smear" },
+                new AnalysisType() { Name = "Genetic Testing" },
+                new AnalysisType() { Name = "Allergy Testing" },
+                new AnalysisType() { Name = "Thyroid Function Tests" },
+                new AnalysisType() { Name = "Hormone Levels (e.g., estrogen, testosterone)" },
+                new AnalysisType() { Name = "Clinical pathology" },
+                new AnalysisType() { Name = "Hematology" },
+                new AnalysisType() { Name = "Microbiology" },
+                new AnalysisType() { Name = "Clinical chemistry" },
+            };
+
+            context.AnalysisTypes.AddRange(analysisTypes);
             context.SaveChanges();
         }
     }
