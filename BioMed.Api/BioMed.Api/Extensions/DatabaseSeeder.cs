@@ -17,6 +17,7 @@ namespace BioMed.Api.Extensions
             CreateSpesializations(context);
             CreateDepartments(context);
             CreateDoctors(context);
+            CreatePatients(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -443,6 +444,31 @@ namespace BioMed.Api.Extensions
                 }
             }
             context.Doctors.AddRange(doctors);
+            context.SaveChanges();
+        }
+
+        public static void CreatePatients(BioMedDbContext context)
+        {
+            if (context.Patients.Any()) return;
+
+            var patients = new List<Patient>();
+            var genders = new[] { "Male", "Female" };
+
+            for (int i = 0; i < 1000000; i++)
+            {
+                patients.Add(new Patient()
+                {
+                    FirstName = _faker.Name.FirstName(),
+                    LastName = _faker.Name.LastName(),
+                    MiddleName = _faker.Name.FirstName(),
+                    PhoneNumber = _faker.Phone.PhoneNumber("+998-(##) ###-##-##"),
+                    RegistrationDate = _faker.Date.Between(DateTime.Now.AddYears(-2), DateTime.Now),
+                    Email = _faker.Name.FirstName() + "@gmail.com",
+                    Gender = _faker.PickRandom(genders)
+                });
+            }
+
+            context.Patients.AddRange(patients);
             context.SaveChanges();
         }
     }
