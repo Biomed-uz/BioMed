@@ -15,6 +15,7 @@ namespace BioMed.Api.Extensions
             using var context = new BioMedDbContext(options);
 
             CreateSpesializations(context);
+            CreateDepartments(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -315,6 +316,105 @@ namespace BioMed.Api.Extensions
             };
 
             context.Spesializations.AddRange(spesializations);
+            context.SaveChanges();
+        }
+
+        private static void CreateDepartments(BioMedDbContext context)
+        {
+            if (context.Departments.Any()) return;
+            var departments = new List<Department>
+            {
+                new Department()
+                {
+                    Name = "Emergency Department"
+                },
+                new Department()
+                {
+                    Name = "Medical Ward"
+                },
+                new Department()
+                {
+                    Name = "Intensive Care Unit"
+                },
+                new Department()
+                {
+                    Name = "Laboratory"
+                },
+                new Department()
+                {
+                    Name = "Radiology"
+                },
+                new Department()
+                {
+                    Name = "Pharmacy"
+                },
+                new Department()
+                {
+                    Name = "Operating Room"
+                },
+                new Department()
+                {
+                    Name = "Obstetrics and Gynecology"
+                },
+                new Department()
+                {
+                    Name = "Pediatrics"
+                },
+                new Department()
+                {
+                    Name = "Cardiology"
+                },
+                new Department()
+                {
+                    Name = "Neurology"
+                },
+                new Department()
+                {
+                    Name = "Orthopedics"
+                },
+                new Department()
+                {
+                    Name = "Gastroenterology"
+                },
+                new Department()
+                {
+                    Name = "Oncology"
+                },
+                new Department()
+                {
+                    Name = "Psychiatry"
+                },
+                new Department()
+                {
+                    Name = "Rehabilitation"
+                },
+                new Department()
+                {
+                    Name = "Nutrition Services"
+                },
+                new Department()
+                {
+                    Name = "Administration"
+                },
+                new Department()
+                {
+                    Name = "Infection Control"
+                },
+                new Department()
+                {
+                    Name = "Health Information Management"
+                },
+                new Department()
+                {
+                    Name = "Facilities"
+                },
+                new Department()
+                {
+                    Name = "Quality Improvement"
+                },
+            };
+
+            context.Departments.AddRange(departments);
             context.SaveChanges();
         }
     }
