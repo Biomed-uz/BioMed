@@ -18,6 +18,7 @@ namespace BioMed.Api.Extensions
             CreateDepartments(context);
             CreateDoctors(context);
             CreatePatients(context);
+            CreateVisits(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -469,6 +470,33 @@ namespace BioMed.Api.Extensions
             }
 
             context.Patients.AddRange(patients);
+            context.SaveChanges();
+        }
+
+        public static void CreateVisits(BioMedDbContext context)
+        {
+            if (context.Visits.Any()) return;
+
+            var patients = context.Patients.ToList();
+            var doctors = context.Doctors.ToList();
+
+            var visits = new List<Visit>();
+
+            foreach (var patient in patients)
+            {
+                var randomDoctor = _faker.PickRandom(doctors);
+
+                visits.Add(new Visit()
+                {
+                    VisitDate = _faker.Date.Between(DateTime.Now.AddYears(-2), DateTime.Now),
+                    Prescription = _faker.Lorem.Sentence(),
+                    TotalPrice = _faker.Random.Decimal(200_000, 2_000_000),
+                    DoctorId = randomDoctor.Id,
+                    PatientId = patient.Id,
+                });
+            }
+
+            context.Visits.AddRange(visits);
             context.SaveChanges();
         }
     }
