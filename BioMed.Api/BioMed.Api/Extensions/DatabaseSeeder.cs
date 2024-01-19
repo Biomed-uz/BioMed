@@ -22,6 +22,7 @@ namespace BioMed.Api.Extensions
             CreatePayments(context);
             CreateAnalysisTypes(context);
             CreateLaboratoryResults(context);
+            CreateDiseaseCategories(context);
         }
 
         private static void CreateSpesializations(BioMedDbContext context)
@@ -590,6 +591,38 @@ namespace BioMed.Api.Extensions
             }
 
             context.LaboratoryResults.AddRange(laboratoryResult);
+            context.SaveChanges();
+        }
+
+        private static void CreateDiseaseCategories(BioMedDbContext context)
+        {
+            if (context.DiseaseCategories.Any()) return;
+
+            var diseaseCategories = new List<DiseaseCategory>
+            {
+                new DiseaseCategory() { Name = "Infectious Diseases" },
+                new DiseaseCategory() { Name = "Cardiovascular Diseases" },
+                new DiseaseCategory() { Name = "Respiratory Diseases" },
+                new DiseaseCategory() { Name = "Neurological Disorders" },
+                new DiseaseCategory() { Name = "Gastrointestinal Diseases" },
+                new DiseaseCategory() { Name = "Endocrine Disorders" },
+                new DiseaseCategory() { Name = "Musculoskeletal Disorders" },
+                new DiseaseCategory() { Name = "Hematological Disorders" },
+                new DiseaseCategory() { Name = "Oncological Disorders" },
+                new DiseaseCategory() { Name = "Genetic Disorders" },
+                new DiseaseCategory() { Name = "Psychiatric Disorders" },
+                new DiseaseCategory() { Name = "Autoimmune Diseases" },
+                new DiseaseCategory() { Name = "Renal Diseases" },
+                new DiseaseCategory() { Name = "Dermatological Conditions" },
+                new DiseaseCategory() { Name = "Reproductive Health Issues" },
+                new DiseaseCategory() { Name = "Allergic Conditions" },
+                new DiseaseCategory() { Name = "Dental and Oral Health Issues" },
+                new DiseaseCategory() { Name = "Vector-Borne Diseases" },
+                new DiseaseCategory() { Name = "Rare Diseases" },
+                new DiseaseCategory() { Name = "Environmental and Occupational Diseases" },
+            };
+
+            context.DiseaseCategories.AddRange(diseaseCategories);
             context.SaveChanges();
         }
     }
