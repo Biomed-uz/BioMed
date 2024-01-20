@@ -6,12 +6,6 @@ using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
 using BioMed.Infrastructure.Persistence;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BioMed.Services.Services
 {
