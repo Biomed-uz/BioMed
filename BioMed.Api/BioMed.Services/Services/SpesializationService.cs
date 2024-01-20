@@ -28,7 +28,8 @@ namespace BioMed.Services.Services
 
             if (!string.IsNullOrWhiteSpace(spesializationResourceParameters.SearchString))
             {
-                query = query.Where(x => x.Name.Contains(spesializationResourceParameters.SearchString));
+                query = query.Where(x => x.Name != null
+                    && x.Name.Contains(spesializationResourceParameters.SearchString));
             }
 
             if (spesializationResourceParameters.DepartmentId > 0)
