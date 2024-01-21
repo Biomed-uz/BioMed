@@ -6,7 +6,7 @@ namespace BioMed.Domain.Interfaces.Services
 {
     public interface IDiseaseCategoryService
     {
-        PaginatedList<DiseaseCategoryDTO> GetCategories(DiseaseCategoryResourceParameters diseaseCategoryResourceParameters);
+        PaginatedList<DiseaseCategoryDTO> GetDiseaseCategories(DiseaseCategoryResourceParameters diseaseCategoryResourceParameters);
         DiseaseCategoryDTO? GetDiseaseCategoryById(int id);
         DiseaseCategoryDTO CreateDiseaseCategory(DiseaseCategoryForCreateDTO diseaseCategoryToCreate);
         void UpdateDiseaseCategory(DiseaseCategoryForUpdateDTO diseaseCategoryToUpdate);
