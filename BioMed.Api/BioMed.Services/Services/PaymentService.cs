@@ -2,13 +2,14 @@
 using BioMed.Domain.DTOs.Payment;
 using BioMed.Domain.Entities;
 using BioMed.Domain.Exceptions;
+using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
 using BioMed.Infrastructure.Persistence;
 
 namespace BioMed.Services.Services
 {
-    public class PaymentService
+    public class PaymentService : IPaymentService
     {
         private readonly IMapper _mapper;
         private readonly BioMedDbContext _context;
