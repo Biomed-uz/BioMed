@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BioMed.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(BioMedDbContext))]
-    [Migration("20240117132041_Initial_Create")]
+    [Migration("20240119164938_Initial_Create")]
     partial class Initial_Create
     {
         /// <inheritdoc />
