@@ -44,7 +44,7 @@ namespace BioMed.Api.Controllers
         {
             var patient = _patientService.CreatePatient(patientForCreateDTO);
 
-            return CreatedAtRoute("GetPatientById", new { id = patient.Id }, patient);
+            return CreatedAtAction(nameof(Get), new { id = patient.Id }, patient);
         }
 
         [HttpPut]

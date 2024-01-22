@@ -45,7 +45,7 @@ namespace BioMed.Api.Controllers
         {
             var treatment = _treatmentService.CreateTreatment(treatmentForCreateDTO);
 
-            return CreatedAtAction("GetTreatmentById", new { id = treatment.Id }, treatment);
+            return CreatedAtAction(nameof(Get), new { id = treatment.Id }, treatment);
         }
 
         [HttpPut]
