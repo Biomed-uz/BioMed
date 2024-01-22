@@ -17,8 +17,8 @@ namespace BioMed.Services.Services
         public PatientService(IMapper mapper,
             BioMedDbContext context)
         {
-            _mapper = mapper;
-            _context = context;
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public PaginatedList<PatientDTO> GetPatients(
