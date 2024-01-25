@@ -76,13 +76,5 @@ namespace BioMed.Api.Controllers
                 TotalPages = treatmentDTOs.TotalPages,
             };
         }
-
-        class PagenationMetaData
-        {
-            public int Totalcount { get; set; }
-            public int PageSize { get; set; }
-            public int CurrentPage { get; set; }
-            public int TotalPages { get; set; }
-        }
     }
 }
