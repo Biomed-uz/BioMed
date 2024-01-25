@@ -2,6 +2,7 @@
 using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -9,6 +10,7 @@ namespace BioMed.Api.Controllers
 {
     [Route("api/analysisType")]
     [ApiController]
+    [Authorize]
     public class AnalysisTypeController : Controller
     {
         private readonly IAnalysisTypeService _analysisTypeService;

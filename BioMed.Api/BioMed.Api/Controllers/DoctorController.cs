@@ -2,12 +2,15 @@
 using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace BioMed.Api.Controllers
 {
     [Route("api/doctor")]
+    [ApiController]
+    [Authorize]
     public class DoctorController : Controller
     {
         private readonly IDoctorService _doctorService;
