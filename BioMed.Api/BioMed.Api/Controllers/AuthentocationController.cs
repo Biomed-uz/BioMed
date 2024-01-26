@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BioMed.Api.LoginModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -8,12 +9,6 @@ namespace BioMed.Api.Controllers
 {
     [Route("auth")]
     [ApiController]
-
-    public class LoginRequest
-    {
-        public string Login { get; set; }
-        public string Password { get; set; }
-    }
     public class AuthentocationController : Controller
     {
         [HttpPost("Login")]
@@ -57,12 +52,5 @@ namespace BioMed.Api.Controllers
                 Phone = "+998 (88) 000 00 00"
             };
         }
-    }
-    class User
-    {
-        public string? Name { get; set; }
-        public string? Phone { get; set; }
-        public string? Login { get; set; }
-        public string? Password { get; set; }
     }
 }
