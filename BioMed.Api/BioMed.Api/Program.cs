@@ -3,6 +3,7 @@ using BioMed.Api.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Serilog;
 
 namespace BioMed.Api
 {
@@ -12,12 +13,15 @@ namespace BioMed.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Host.UseSerilog();
+
             builder.Services.AddControllers()
                 .AddNewtonsoftJson()
                 .AddXmlSerializerFormatters();
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureLogger();
             builder.Services.ConfigureDatabaseContext();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddAuthentication("Bearer")

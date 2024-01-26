@@ -6,6 +6,7 @@ using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
 using BioMed.Infrastructure.Persistence;
+using Microsoft.Extensions.Logging;
 
 namespace BioMed.Services.Services
 {
@@ -13,12 +14,15 @@ namespace BioMed.Services.Services
     {
         private readonly IMapper _mapper;
         private readonly BioMedDbContext _context;
+        private readonly ILogger<LaboratoryResultService> _logger;
 
         public LaboratoryResultService(IMapper mapper,
+            ILogger<LaboratoryResultService> logger,
             BioMedDbContext context)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _context = context ?? throw new ArgumentNullException(nameof(context));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public PaginatedList<LaboratoryResultDTO> GetLaboratoryResults(

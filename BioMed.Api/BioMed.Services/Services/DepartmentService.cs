@@ -6,6 +6,7 @@ using BioMed.Domain.Interfaces.Services;
 using BioMed.Domain.Pagination;
 using BioMed.Domain.ResourceParameters;
 using BioMed.Infrastructure.Persistence;
+using Microsoft.Extensions.Logging;
 
 namespace BioMed.Services.Services
 {
@@ -13,12 +14,15 @@ namespace BioMed.Services.Services
     {
         private readonly IMapper _mapper;
         private readonly BioMedDbContext _context;
+        private readonly ILogger<DepartmentService> _logger;
 
         public DepartmentService(IMapper mapper,
+            ILogger<DepartmentService> logger,
             BioMedDbContext dbContext)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _context = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public PaginatedList<DepartmentDTO> GetDepartments(
