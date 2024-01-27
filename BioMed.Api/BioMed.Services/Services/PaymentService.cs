@@ -14,7 +14,8 @@ namespace BioMed.Services.Services
         private readonly IMapper _mapper;
         private readonly BioMedDbContext _context;
 
-        public PaymentService(IMapper mapper, BioMedDbContext context)
+        public PaymentService(IMapper mapper,
+            BioMedDbContext context)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _context = context ?? throw new ArgumentNullException(nameof(context));

@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BioMed.Infrastructure.Persistence.Migrations
+namespace BioMed.Infrastructure.persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Create : Migration
+    public partial class initial_create : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

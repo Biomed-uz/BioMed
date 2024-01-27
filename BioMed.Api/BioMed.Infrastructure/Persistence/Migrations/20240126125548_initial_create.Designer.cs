@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BioMed.Infrastructure.Persistence.Migrations
+namespace BioMed.Infrastructure.persistence.Migrations
 {
     [DbContext(typeof(BioMedDbContext))]
-    [Migration("20240119164938_Initial_Create")]
-    partial class Initial_Create
+    [Migration("20240126125548_initial_create")]
+    partial class initial_create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

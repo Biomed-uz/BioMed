@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BioMed.Infrastructure.Persistence.Migrations
+namespace BioMed.Infrastructure.persistence.Migrations
 {
     [DbContext(typeof(BioMedDbContext))]
     partial class BioMedDbContextModelSnapshot : ModelSnapshot
